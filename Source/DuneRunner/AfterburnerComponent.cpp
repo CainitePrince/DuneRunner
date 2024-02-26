@@ -38,13 +38,13 @@ bool UAfterburnerComponent::Use()
 	{
 		_generator->AvailablePower -= consumption;
 
-		UE_LOG(LogTemp, Log, TEXT("Consumption: %f, Power: %f"), consumption, _generator->AvailablePower);
+		//UE_LOG(LogTemp, Log, TEXT("Consumption: %f, Power: %f"), consumption, _generator->AvailablePower);
 
 		return true;
 	}
 	else
 	{
-		_nextFireTime = time + 0.1f;
+		_nextFireTime = time + 0.2f;
 	}
 
 	return false;
