@@ -4,26 +4,17 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "GeneratorComponent.generated.h"
+#include "WeaponsComponent.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class DUNERUNNER_API UGeneratorComponent : public UActorComponent
+class DUNERUNNER_API UWeaponsComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UGeneratorComponent();
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	float Capacity;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	float AvailablePower;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	float ProductionPerSecond;
+	UWeaponsComponent();
 
 protected:
 	// Called when the game starts
@@ -33,5 +24,5 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	void UsePower(float power);
+		
 };
