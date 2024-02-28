@@ -37,16 +37,22 @@ bool UAfterburnerComponent::Use()
 	if ((consumption) <= _generator->AvailablePower && time >= _nextFireTime)
 	{
 		_generator->AvailablePower -= consumption;
-
+		_isFiring = true;
 		//UE_LOG(LogTemp, Log, TEXT("Consumption: %f, Power: %f"), consumption, _generator->AvailablePower);
 
 		return true;
 	}
 	else
 	{
-		_nextFireTime = time + 0.2f;
+		_nextFireTime = time + CooldownTime;
+		_isFiring = false;
 	}
 
 	return false;
+}
+
+bool UAfterburnerComponent::IsFiring()
+{
+	return _isFiring;
 }
 

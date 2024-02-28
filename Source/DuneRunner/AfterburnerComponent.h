@@ -23,6 +23,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float PowerConsumption;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	float CooldownTime;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -34,7 +37,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool Use();
 
+	UFUNCTION(BlueprintCallable)
+	bool IsFiring();
+
 private:
 	UGeneratorComponent* _generator;
 	float _nextFireTime;
+	bool _isFiring;
 };

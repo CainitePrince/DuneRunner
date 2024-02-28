@@ -24,6 +24,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere);
 	float PowerConsumption;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere);
+	float Damage;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
